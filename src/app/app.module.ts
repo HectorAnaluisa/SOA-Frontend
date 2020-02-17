@@ -3,16 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListarComponent } from './reser/listar/listar.component';
+import { AddComponent } from './reser/add/add.component';
+import { EditComponent } from './reser/edit/edit.component';
+import { FormsModule } from '@angular/forms'; 
+import { ServiceService } from './service/service.service'; 
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListarComponent,
+    AddComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule, 
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
